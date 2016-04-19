@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'liquid-rails/version'
+require 'liquid4-rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'liquid-rails'
+  spec.name          = 'liquid4-rails'
   spec.version       = Liquid::Rails::VERSION
   spec.authors       = ['Chamnap Chhorn']
   spec.email         = ['chamnapchhorn@gmail.com']
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rails',    '>= 3.2'
-  spec.add_dependency 'liquid',   '>= 3.0.0'
+  spec.add_dependency 'liquid',   '>= 4.0.0.rc2'
   spec.add_dependency 'kaminari', '~> 0.16.1'
 end

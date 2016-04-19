@@ -2,15 +2,15 @@ module Liquid
   module Rails
     module DateFilter
       delegate \
-                :distance_of_time_in_words,
-                :time_ago_in_words,
+        :distance_of_time_in_words,
+        :time_ago_in_words,
 
-                to: :h
+        to: :view
 
       private
 
-        def h
-          @h ||= @context.registers[:view]
+        def view
+          @view ||= @context.registers[:view]
         end
     end
   end

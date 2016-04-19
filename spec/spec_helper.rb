@@ -20,10 +20,10 @@ ENV['RAILS_ENV'] = 'test'
 
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 require 'pry'
-require 'liquid-rails'
+require 'liquid4-rails'
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'liquid-rails/matchers'
+require 'liquid4-rails/matchers'
 
 Liquid::Template.error_mode = :strict
 

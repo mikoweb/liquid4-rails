@@ -1,0 +1,5 @@
+require 'liquid4-rails/rspec/view_controller_context'
+require 'liquid4-rails/rspec/drop_matchers'
+require 'liquid4-rails/rspec/drop_example_group'
+require 'liquid4-rails/rspec/tag_example_group'
+require 'liquid4-rails/rspec/filter_example_group'

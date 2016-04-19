@@ -2,15 +2,15 @@ module Liquid
   module Rails
     module SanitizeFilter
       delegate \
-                :strip_tags,
-                :strip_links,
+        :strip_tags,
+        :strip_links,
 
-                to: :h
+        to: :view
 
       private
 
-        def h
-          @h ||= @context.registers[:view]
+        def view
+          @view ||= @context.registers[:view]
         end
     end
   end

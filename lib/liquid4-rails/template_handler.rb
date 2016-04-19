@@ -23,9 +23,14 @@ module Liquid
         assigns['content_for_layout'] = @view.content_for(:layout) if @view.content_for?(:layout)
         assigns.merge!(local_assigns.stringify_keys)
 
+        debug_mode = ::Rails.env.development? || ::Rails.env.test?
+        if debug_mode
+          Liquid.cache_classes = false
+          Liquid::Template.error_mode = :strict
+        end
+
         liquid = Liquid::Template.parse(template)
-        render_method = (::Rails.env.development? || ::Rails.env.test?) ? :render! : :render
-        liquid.send(render_method, assigns, filters: filters, registers: { view: @view, controller: @controller, helper: @helper }).html_safe
+        liquid.send(debug_mode ? :render! : :render, assigns, filters: filters, registers: { view: @view, controller: @controller, helper: @helper }, strict_variables: debug_mode, strict_filters: debug_mode).html_safe
       end
 
       def filters
